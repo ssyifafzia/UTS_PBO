@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Detinasi Pulau</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <h2>Edit Destinasi Pulau</h2>
+    <form action="/update/<%= pulau.id %>" method="post">
+        <label for="data_nelayan">data_nelayan:</label>
+        <input type="text" id="data_nelayan" name="data_nelayan" required><br>
+        <label for="hasil_tangkapan_ikan">hasil_tangkapan_ikan:</label>
+        <input type="hasil_tangkapan_ikan" name="hasil_tangkapan_ikan" id="hasil_tangkapan_ikan"><br>
+        <label for="stok_ikan_dipasar">stok_ikan_dipasar:</label>
+        <input type="stok_ikan_dipasar" name="stok_ikan_dipasar" id="stok_ikan_dipasar"><br>
+    </form>
+</body>
+</html>

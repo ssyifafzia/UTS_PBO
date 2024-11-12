@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Node JS - MySQL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1> perusahaan kelautan dan perikanan samudera sejahtera </h1>
+    <table border="1">
+        <tr>
+            <th>data_nelayan</th>
+            <th>hasil_tangkapan_ikan</th>
+            <th>stok_ikan_dipasar</th>
+        </tr>
+        <% pulau.forEach(Pengguna => {%>
+        <tr>
+            <td><%= Pengguna.data_nelayan %></td>
+            <td><%= Pengguna.hasil_tangkapan_ikan %></td>
+            <td><%= Pengguna.stok_ikan_dipasar %></td>
+            <td>
+                <a href="/edit/<%= Pengguna.id %>">Edit</a>
+                <a href="/delete/<%= Pengguna.id %>">Hapus</a>
+            </td>
+        </tr>
+        <% })%>
+    </table>
+
+    <h2 id="Tambah">Tambah data </h2>
+    <form action="/add" method="post">
+        <label for="data_nelayan">data_nelayan:</label>
+        <input type="text" name="data_nelayan" placeholder="data_nelayan">
+        <label for="hasil_tangkapan_ikan">hasil_tangkapan_ikan:</label>
+        <input type="text" name="hasil_tangkapan_ikan" placeholder="hasil_tangkapan_ikan Pulau">
+        <label for="stok_ikan_dipasar">stok_ikan_dipasar:</label>
+        <input type="text" name="stok_ikan_dipasar" placeholder="stok_ikan_dipasar">
+        <button type="submit">Tambah</button>
+    </form>
+
+</body>
+</html>

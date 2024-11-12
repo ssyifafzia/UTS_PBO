@@ -1,0 +1,47 @@
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="/styles.css">
+    <title>register</title>
+</head>
+<body>
+    <div class="container">
+        <h2> register</h2>
+        <form action="/auth/register" method="POST">
+            <label for="Username">Username</label>
+            <input type="text" id="Username" Name="Username" required> <br>
+
+            <label for="Email">Email</label>
+            <input type="Email" id="Email" Name="Email" required> <br>
+
+            <label for="Phone">Phone</label>
+            <input type="Phone" id="Phone" Name="Phone" required> <br>
+
+            <label for="Instagram">Instagram</label>
+            <input type="Instagram" id="Instagram" Name="Instagram" required> <br>
+
+            <label for="Password">Passwords </label>
+            <input type="Password" id="Password" Name="Password" required> <br>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="Password" name="confirmPassword" id="confirmPassword" required><br>
+
+            <button type="submit">register</button>
+        </form>
+        <p> Already have an account? <a href="/auth/login"> Login here</a></p>
+    </div>
+<script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const password = document.getElementById('Password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                event.preventDefault(); // prevent form submission
+                alert('Passwords do not match!');
+            }
+        });
+</script>
+</body>
+</html>
